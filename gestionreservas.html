@@ -45,7 +45,7 @@
           border: 1px solid #333; /* Gris */
           border-radius: 3px;
       }
-      input[type="submit"] {
+      .boton {
           background-color: #df0e0ed0; /* Rojo */
           color: #fff; /* Blanco */
           border: none;
@@ -58,7 +58,7 @@
           cursor: pointer;
           transition: background-color 0.3s ease;
       }
-      input[type="submit"]:hover {
+      .boton:hover {
           background-color: #333; /* Gris */
       }
   </style> 
@@ -455,7 +455,7 @@
     
     
         
-        <form action="procesar_reserva.php" method="post">
+        <form action="procesar_reserva.php" method="post" >
             <label for="nombre">Nombre completo:</label>
             <input type="text" id="nombre" name="nombre" required>
 
@@ -470,9 +470,12 @@
 
             <label for="salon">Salón de reserva:</label>
             <input type="text" id="salon" name="salon" required>
+            
+            
 
-            <input type="submit" value="Reservar">
-        
+            <a href="asignacionC.html" class="boton">Reserva</a>
+              
+            
           
           </form>
         </div>
