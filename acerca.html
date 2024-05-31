@@ -4,74 +4,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="imagen.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    integrity="sha384-..." crossorigin="anonymous">
-  <title>Gestion de reservas</title>
-  <style>
-    .contenedor-padre {
-      font-family: Arial, sans-serif;
 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+  <title>Asignacion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: url(IMG/fondo.jpg);
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 50vh;
-      max-width: 400px;
-      margin-left: 40%;
-      margin-top: 5%;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      background-color: rgba(93, 90, 90, 0.741);
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-
-
-    label {
-      display: block;
-      font-weight: bold;
+    .Titulo {
+      margin-top: 20px;
       margin-bottom: 10px;
-      color: #333;
-      /* Gris */
+      font-size: 30px;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="date"],
-    input[type="time"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #333;
-      /* Gris */
-      border-radius: 3px;
-    }
 
-    .boton {
-      background-color: #df0e0ed0;
-      /* Rojo */
-      color: #fff;
-      /* Blanco */
-      border: none;
-      padding-top: 10px;
-      padding-left: 5px;
-      padding-right: 5px;
-      padding-bottom: 5px;
-      margin-left: 34%;
-      border-radius: 3px;
+
+    .computer {
+      display: inline-block;
+      width: 100px;
+      height: 70px;
+      margin: 10px;
+      background-color: #ccc;
+      /* Gris */
       cursor: pointer;
+      border-radius: 10px;
+      position: relative;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .occupied {
+      background-color: #ff0000;
+      /* Rojo */
+    }
+
+    .computer::before {
+      content: "";
+      position: absolute;
+      background-image: url(IMG/computer-svgrepo-com.svg);
+      background-repeat: no-repeat;
+      margin-left: 10%;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      height: 50px;
+       /* background-color: #000; */
+      /* Negro */
+      border-radius: 5px; 
       transition: background-color 0.3s ease;
     }
 
-    .boton:hover {
-      background-color: #333;
-      /* Gris */
+    .computer::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      height: 50px;
+      /* background-color: #fff; */
+      /* Blanco */
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .computer i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #000;
+      /* Negro */
+      transition: color 0.3s ease;
+    }
+
+    .computer:hover {
+      background-color: #0056b3;
+      /* Azul */
+      transform: scale(1.1);
+    }
+
+    .computer:hover::before {
+      /* background-color: #333; */
+      /* Gris más oscuro */
+    }
+
+    .computer:hover i {
+      color: #fff;
+      /* Blanco */
+    }
+
+    .padre1 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .Fila1A {
+      display: flex;
+      margin-right: 50px;
+    }
+
+    .Fila2A {
+      display: flex;
+    }
+
+    .padre2 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .Fila1B {
+      display: flex;
+      margin-right: 50px;
+    }
+
+    .Fila2B {
+      display: flex;
+    }
+
+    .padre3 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .Fila1C {
+      display: flex;
+      margin-right: 50px;
+    }
+
+    .Fila2C {
+      display: flex;
+    }
+
+    .btn {
+      font-size: 1.2rem;
+      padding: 1rem 2.5rem;
+      border: none;
+      outline: none;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      background-color: rgb(14, 14, 26);
+      color: rgb(234, 234, 234);
+      font-weight: 700;
+      transition: 0.6s;
+      box-shadow: 0px 0px 60px #1f4c65;
+      -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn:active {
+      scale: 0.92;
+    }
+
+    .btn:hover {
+      background: rgb(2, 29, 78);
+      background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(252, 0, 0, 0.69) 60%);
+      color: rgb(4, 4, 38);
     }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -422,10 +515,10 @@
             <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">Reservation Homework</span>
           </a>
           <ul class="flex items-center hidden space-x-8 lg:flex">
-            <li><a href="gestionreservas.html" aria-label="Our product" title="Our product"
+            <li><a href="gestionreservas.html" aria-label="Gestion de reservas" title="Gestion de reservas"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Gestion
                 de reservas</a></li>
-            <li><a href="asignacionC.html" aria-label="Our product" title="Our product"
+            <li><a href="asignacionC.html" aria-label="Asignacion" title="Asignacion"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Asignacion</a>
             </li>
 
@@ -464,41 +557,134 @@
     </div>
     </div>
   </header>
-
+  
   <main>
     <section>
+      <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+          <div>
+            <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-50 uppercase rounded-full bg-teal-accent-400">
+              Acerca de noosotros
+            </p>
+          </div>
+          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-50 sm:text-4xl md:mx-auto">
+            <span class="relative inline-block">
+              <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                <defs>
+                  <pattern id="7b568941-9ed0-4f49-85a0-5e21ca6c7ad6" x="0" y="0" width=".135" height=".30">
+                    
+                  </pattern>
+                </defs>
+                <rect fill="url(#7b568941-9ed0-4f49-85a0-5e21ca6c7ad6)" width="52" height="24"></rect>
+              </svg>
+              <span class="relative"></span>
+            </span>
+            Conoce un poco de nuestra empresa 
+          </h2>
+          <p class="text-base text-gray-50 md:text-lg">
+            RESERVATION HOMEWORK
+        </div>
+        <div class="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:grid-cols-2">
+          <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+            <div class="flex flex-col h-full">
+              <img src="IMG/availability-svgrepo-com (1).svg"  alt="" />
+              <div class="flex-grow border border-t-0 rounded-b">
+                <div class="p-5">
+                  <h6 class="mb-2 font-semibold leading-5">Introduccion</h6>
+                  <p class="text-sm text-gray-900">
+                    En la era digital actual, la eficiencia y la organización son claves para el éxito de cualquier institución educativa, empresa o centro de formación. Nuestra empresa, RESERVATION HOMEWORK, ofrece una solución innovadora para la gestión y reserva de salas de computadoras, optimizando el uso de recursos tecnológicos y mejorando la experiencia de los usuarios.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+            <div class="flex flex-col h-full">
+              <img src="IMG/host-record-svgrepo-com (1).svg"   alt="">
+              <div class="flex-grow border border-t-0 rounded-b">
+                <div class="p-5">
+                  <h6 class="mb-2 font-semibold leading-5">Problema </h6>
+                  <p class="text-sm text-gray-900">
+                    La gestión de salas de computadoras puede ser un desafío significativo. Las reservas dobles, la falta de disponibilidad y la administración manual de horarios pueden causar ineficiencias y frustraciones tanto para los administradores como para los usuarios finales. Estos problemas no solo afectan la productividad, sino que también pueden resultar en una mala administración de los recursos tecnológicos disponibles.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+            <div class="flex flex-col h-full">
+              <img src="IMG/system-settings-svgrepo-com (2).svg"  />
+              <div class="flex-grow border border-t-0 rounded-b">
+                <div class="p-5">
+                  <h6 class="mb-2 font-semibold leading-5">Solucion</h6>
+                  <p class="text-sm text-gray-900">
+                    RESERVATION HOMEWORK ofrece una plataforma para reservar salas de computadoras que facilita:
+
+                    Reservas en tiempo real para evitar conflictos de horarios.
+                    Gestión centralizada de salas por parte de los administradores.
+                    Notificaciones automáticas para informar a los usuarios sobre sus reservas.
+                    Análisis y reportes para optimizar el uso de las salas.
+                    Acceso fácil desde cualquier dispositivo con Internet para gestionar reservas en cualquier lugar
+                  
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+            <div class="flex flex-col h-full">
+              <img src="IMG/dns-svgrepo-com.svg"  />
+              <div class="flex-grow border border-t-0 rounded-b">
+                <div class="p-5">
+                  <h6 class="mb-2 font-semibold leading-5">Beneficios</h6>
+                  <p class="text-sm text-gray-900">
+                    •	Eficiencia Operativa: Reduce el tiempo y esfuerzo dedicados a la gestión de las salas.
+                    •	Mayor Productividad: Asegura que los recursos tecnológicos se utilicen de manera óptima.
+                    •	Mejora la Experiencia del Usuario: Facilita el acceso a las salas de computadoras, aumentando la satisfacción de los usuarios.
+                    •	Datos para la Toma de Decisiones: Proporciona datos valiosos para tomar decisiones informadas sobre la gestión de los recursos.
+                  
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+            <div class="flex flex-col h-full">
+              <img src="IMG/interface-control-svgrepo-com.svg" />
+              <div class="flex-grow border border-t-0 rounded-b">
+                <div class="p-5">
+                  <h6 class="mb-2 font-semibold leading-5">Casos de exito</h6>
+                  <p class="text-sm text-gray-900">
+                    Hemos implementado nuestra solución en varias instituciones educativas y empresas con resultados notables. Nuestros clientes han reportado una disminución significativa en los conflictos de horarios y un aumento en la eficiencia del uso de sus salas de computadoras.
 
 
-      <div class="contenedor-padre">
-
-
-
-
-        <form action="procesar_reserva.php" method="post">
-          <label for="nombre">Nombre completo:</label>
-          <input type="text" id="nombre" name="nombre" required>
-
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="fecha">Fecha de reserva:</label>
-          <input type="date" id="fecha" name="fecha" required>
-
-          <label for="hora">Hora de reserva:</label>
-          <input type="time" id="hora" name="hora" required>
-
-          <label for="salon">Salón de reserva:</label>
-          <input type="text" id="salon" name="salon" required>
-
-
-
-          <a href="asignacionC.html" class="boton">Reserva</a>
-
-
-
-        </form>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+            <div class="flex flex-col h-full">
+              <img src="IMG/data-analysis-svgrepo-com.svg"  />
+              <div class="flex-grow border border-t-0 rounded-b">
+                <div class="p-5">
+                  <h6 class="mb-2 font-semibold leading-5"> Conclucion</h6>
+                  <p class="text-sm text-gray-900">
+                    RESERVATION HOMEWORK se dedica a proporcionar una solución eficaz para la reserva y gestión de salas de computadoras. Con nuestra plataforma, transformamos un proceso complejo en uno sencillo y eficiente, permitiendo que las instituciones se enfoquen en su misión principal.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+         
+         
+        </div>
+        <div class="text-center">
+          
+        </div>
       </div>
-
     </section>
   </main>
   <footer>
@@ -630,17 +816,6 @@
 
 
   </footer>
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>

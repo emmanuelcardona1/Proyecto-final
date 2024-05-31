@@ -56,9 +56,9 @@ section {
 }
 
 
- input :focus~label,
+input :focus~label,
 input :valid~label {
-    top: -5px; 
+    top: -5px;
 }
 
 .input-contenedor input {
@@ -126,25 +126,3 @@ button {
 
 }
 
- /* .Btn {
-    
-    width: 150px;
-    height: 50px;
-    background-color: transparent;
-    color: rgb(237, 237, 237);
-    font-weight: bold;
-    border-width: 2px;
-    border-color: #e0214a;
-    border-radius: 20px;
-    transition: all 0.3s;
-  }
-  
-  .Btn:hover {
-    transform: translateY(-10px);
-    background-color: #e0214a;
- 
-}
-  
-  .Btn::after {
-    transform: translateY(0);
-  }  */
