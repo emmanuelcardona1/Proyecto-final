@@ -4,182 +4,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Proyecto-final/acerca.css">
+  <link rel="stylesheet" href="imagen.css">
   <link rel="stylesheet" href="acerca.css">
-  <title>Asignacion</title>
   <style>
-    body {
+    .contenedor-padre {
       font-family: Arial, sans-serif;
-      background-image: url(IMG/fondo.jpg);
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50vh;
+      max-width: 400px;
+      margin-left: 40%;
+      margin-top: 5%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: rgba(205, 203, 203, 0.781);
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+    button {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #ffffff;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #202020;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
 
-    .Titulo {
-      margin-top: 20px;
+button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #ff0000;
+  z-index: -1;
+}
+
+button:hover, button:focus {
+  color: white;
+}
+
+button:hover:before, button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+
+    label {
+      display: block;
+      font-weight: bold;
       margin-bottom: 10px;
-      font-size: 30px;
-      text-align: center;
-    }
-
-    .NSala {
-      text-align: center;
-    }
-
-
-
-    .computer {
-      display: inline-block;
-      width: 100px;
-      height: 70px;
-      margin: 10px;
-      background-color: #ccc;
+      color: #333;
       /* Gris */
-      cursor: pointer;
-      border-radius: 10px;
-      position: relative;
-      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    .occupied {
-      background-color: #ff0000;
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="time"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #333;
+      /* Gris */
+      border-radius: 3px;
+    }
+
+    .boton {
+      background-color: #df0e0ed0;
       /* Rojo */
-    }
-
-    .computer::before {
-      content: "";
-      position: absolute;
-      background-image: url(IMG/computer-svgrepo-com.svg);
-      background-repeat: no-repeat;
-      margin-left: 10%;
-      top: 10px;
-      left: 10px;
-      width: 80px;
-      height: 50px;
-      /* background-color: #000; */
-      /* Negro */
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .computer::after {
-      content: "";
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 80px;
-      height: 50px;
-      /* background-color: #fff; */
-      /* Blanco */
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .computer i {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
-      color: #000;
-      /* Negro */
-      transition: color 0.3s ease;
-    }
-
-    .computer:hover {
-      background-color: #0056b3;
-      /* Azul */
-      transform: scale(1.1);
-    }
-
-    .computer:hover::before {
-      /* background-color: #333; */
-      /* Gris más oscuro */
-    }
-
-    .computer:hover i {
       color: #fff;
       /* Blanco */
-    }
-
-    .padre1 {
-      display: flex;
-      justify-content: center;
-    }
-
-    .Fila1A {
-      display: flex;
-      margin-right: 50px;
-    }
-
-    .Fila2A {
-      display: flex;
-    }
-
-    .padre2 {
-      display: flex;
-      justify-content: center;
-    }
-
-    .Fila1B {
-      display: flex;
-      margin-right: 50px;
-    }
-
-    .Fila2B {
-      display: flex;
-    }
-
-    .padre3 {
-      display: flex;
-      justify-content: center;
-    }
-
-    .Fila1C {
-      display: flex;
-      margin-right: 50px;
-    }
-
-    .Fila2C {
-      display: flex;
-    }
-
-    .btn {
-      display: flex;
-      align-items: center;
-      font-size: 1.2rem;
-      padding: 1rem 2.5rem;
       border: none;
-      outline: none;
-      border-radius: 0.4rem;
+      padding-top: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 5px;
+      margin-left: 34%;
+      border-radius: 3px;
       cursor: pointer;
-      text-transform: uppercase;
-      background-color: rgb(14, 14, 26);
-      color: rgb(234, 234, 234);
-      font-weight: 700;
-      transition: 0.6s;
-      box-shadow: 0px 0px 60px #1f4c65;
-      -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: 45%;
+      transition: background-color 0.3s ease;
     }
 
-    .btn:active {
-      scale: 0.92;
-    }
-
-    .btn:hover {
-      background: rgb(2, 29, 78);
-      background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(252, 0, 0, 0.69) 60%);
-      color: rgb(4, 4, 38);
-    }
-
-    .botonl {
-      text-align: center;
+    .boton:hover {
+      background-color: #333;
+      /* Gris */
     }
   </style>
-  <script src="https://cdn.tailwindcss.com"></script>
   <script> const defaultTheme = require('tailwindcss/defaultTheme');
+
     module.exports = {
       theme: {
         extend: {
@@ -506,7 +447,6 @@
       },
       plugins: [],
     };</script>
-
 </head>
 
 <body>
@@ -533,159 +473,143 @@
             <li><a href="asignacionC.html" aria-label="Asignacion" title="Asignacion"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Asignacion</a>
             </li>
-
             <a href="acerca.html" button class="nosotros">Nosotros</a>
+
 
             <ul class="flex items-center hidden space-x-8 lg:flex">
               <li>
                 <a href="index.html"
                   class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                  aria-label="Sign up" title="cerrar sesion">
-                  Cerrar sesion
+                  aria-label="Sign up" title="Cerrar sesion">
+                 Cerrar sesion
                 </a>
               </li>
             </ul>
 
-           
 
 
 
 
 
-            </div>
         </div>
-
       </div>
+
+    </div>
     </div>
     </div>
     </div>
   </header>
+
   <main>
-    <h1 style="color: #ccc;" class="Titulo">Asignación de Ordenadores</h1>
-    <h2 style="color :#ccc;" class="NSala">Sala 5.09</h2>
-    <div class="padre1">
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <div>
+          <p
+            class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+            GESTION DE RESERVA
+          </p>
+        </div>
+        <h2
+          class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-50 sm:text-4xl md:mx-auto">
+          <span class="relative inline-block">
 
-      <div class="Fila1A">
-        <div class="computer" id="compA1"><i class="fas fa-desktop">
-            <p>A1</p>
-          </i></div>
-        <div class="computer" id="compA2"><i class="fas fa-desktop">
-            <p>A2</p>
-          </i></div>
-        <div class="computer" id="compA3"><i class="fas fa-desktop">
-            <p>A3</p>
-          </i></div>
-        <div class="computer" id="compA4"><i class="fas fa-desktop">
-            <p>A4</p>
-          </i></div>
+            <span class="relative"></span>
+          </span>
+        
+          <button  class="bienvenido">
+            <span>BIENVENIDO</span>
+            <div class="top"></div>
+            <div class="left"></div>
+            <div class="bottom"></div>
+            <div class="right"></div>
+        </button>
+          
+
+
+
+
+        </h2>
+        <p class="text-base text-gray-50 md:text-lg" style="font-size: 23px;">
+
+          Nuestro servicio de reserva de computadores está diseñado para ser rápido, sencillo y conveniente. Ofrecemos
+          una amplia gama de dispositivos, desde laptops ultraportátiles hasta potentes estaciones de trabajo, todos
+          mantenidos en perfecto estado y equipados con las últimas actualizaciones de software. Además, nuestro equipo
+          de soporte está siempre disponible para asistirte con cualquier duda o problema técnico que puedas tener.
+
+        
+        </p>
       </div>
-      <div class="Fila2A">
-        <div class="computer" id="compA5"><i class="fas fa-desktop">
-            <p>A5</p>
-          </i></div>
-        <div class="computer" id="compA6"><i class="fas fa-desktop">
-            <p>A6</p>
-          </i></div>
-        <div class="computer" id="compA7"><i class="fas fa-desktop">
-            <p>A7</p>
-          </i></div>
-        <div class="computer" id="compA8"><i class="fas fa-desktop">
-            <p>A8</p>
-          </i></div>
+      <div class="grid max-w-sm gap-5 mb-8 lg:grid-cols-3 sm:mx-auto lg:max-w-full">
+        <div class="px-10 py-20 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
+          <p class="mb-2 text-xs font-semibold tracking-wide text-gray-50 uppercase">
+            "PASO 1"
+          </p>
+          <a href="index.html"
+            class="inline-block max-w-xs mx-auto mb-3 text-2xl font-extrabold leading-7 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            aria-label="Read article" title="Nori grape silver beet broccoli kombu beet">
+            <button class="btn">INICIO DE SESION</button>
+          </a>
+          <p class="max-w-xs mx-auto mb-2 text-gray-50">
+            Para acceder a esta sección de nuestra plataforma, es necesario que inicie sesión con sus credenciales. Por favor, ingrese su correo electrónico y contraseña en los campos proporcionados a continuación.
+            <img src="IMG/pc-security-svgrepo-com.svg " alt="" style="display: inline-flex; margin-top: 15px;">
+          </p>
+         
+        </div>
+        <div class="px-10 py-20 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
+          <p class="mb-2 text-xs font-semibold tracking-wide text-gray-50 uppercase">
+            "PASO 2"
+          </p>
+          <a href="gestionreservas.html"
+            class="inline-block max-w-xs mx-auto mb-3 text-2xl font-extrabold leading-7 transition-colors duration-200 hover:text-deep-gray-50 "
+            aria-label="Read article" title="Well, the way they make shows is, they make one">
+           <button>GESTION DE RESERVA</button>
+          </a>
+          <p class="max-w-xs mx-auto mb-2 text-gray-50">
+            Una vez dentro, podrá acceder a la sección desde allí, tendrá la opción de modificar los detalles de su reserva, como la fecha, hora y salen que  desas reservar 
+
+          
+            <img src="IMG/laptop-checkmarks-svgrepo-com.svg" alt="" style="display: inline-flex; margin-top: 70px;">
+          </p>
+          
+        </div>
+        <div class="px-10 py-20 text-center border rounded lg:px-5 lg:py-10 xl:py-20">
+          <p class="mb-2 text-xs font-semibold tracking-wide text-gray-50 uppercase">
+        "paso 3"
+          </p>
+          <a href="asignacionC.html"
+            class="inline-block max-w-xs mx-auto mb-3 text-2xl font-extrabold leading-7 transition-colors duration-200 hover:text-deep-purple-gray-50 "
+            aria-label="Read article" title="Pommy ipsum smeg head whizz morris himer due">
+          <button>ASIGNACION DE EQUIPO</button>
+          </a>
+          <p class="max-w-xs mx-auto mb-2 text-gray-50">
+           Una vez diligenciado los paso anteriores podras ver en pantalla los equipos disponibles y seleccionar el tuyo.
+           <img src="IMG/computer-screen-svgrepo-com.svg" alt="" style="display: inline-flex; margin-top: 85px;">
+          </p>
+         
+        </div>
       </div>
     </div>
-    <br>
-    <div class="padre2">
-      <div class="Fila1B">
-        <div class="computer" id="compB1"><i class="fas fa-desktop">
-            <p>B1</p>
-          </i></div>
-        <div class="computer" id="compB2"><i class="fas fa-desktop">
-            <p>B2</p>
-          </i></div>
-        <div class="computer" id="compB3"><i class="fas fa-desktop">
-            <p>B3</p>
-          </i></div>
-        <div class="computer" id="compB4"><i class="fas fa-desktop">
-            <p>B4</p>
-          </i></div>
-      </div>
-      <div class="Fila2B">
-        <div class="computer" id="compB5"><i class="fas fa-desktop">
-            <p>B5</p>
-          </i></div>
-        <div class="computer" id="compB6"><i class="fas fa-desktop">
-            <p>B6</p>
-          </i></div>
-        <div class="computer" id="compB7"><i class="fas fa-desktop">
-            <p>B7</p>
-          </i></div>
-        <div class="computer" id="compB8"><i class="fas fa-desktop">
-            <p>B8</p>
-          </i></div>
-      </div>
+    <div class="btn-conteiner" >
+      <a class="btn-content" href="gestionreservas.html">
+        <span class="btn-title">SIGUIENTE</span>
+        <span class="icon-arrow">
+          <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <path id="arrow-icon-one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+              <path id="arrow-icon-two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+              <path id="arrow-icon-three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+            </g>
+          </svg>
+        </span> 
+      </a>
     </div>
-
-    <br>
-    <div class="padre3">
-      <div class="Fila1C">
-        <div class="computer" id="compC1"><i class="fas fa-desktop">
-            <p>C1</p>
-          </i></div>
-        <div class="computer" id="compC2"><i class="fas fa-desktop">
-            <p>C2</p>
-          </i></div>
-        <div class="computer" id="compC3"><i class="fas fa-desktop">
-            <p>C3</p>
-          </i></div>
-        <div class="computer" id="compC4"><i class="fas fa-desktop">
-            <p>C4</p>
-          </i></div>
-      </div>
-      <div class="Fila2C">
-        <div class="computer" id="compC5"><i class="fas fa-desktop">
-            <p>C5</p>
-          </i></div>
-        <div class="computer" id="compC6"><i class="fas fa-desktop">
-            <p>C6</p>
-          </i></div>
-        <div class="computer" id="compC7"><i class="fas fa-desktop">
-            <p>C7</p>
-          </i></div>
-        <div class="computer" id="compC8"><i class="fas fa-desktop">
-            <p>C8</p>
-          </i></div>
-      </div>
-    </div>
-
-<div class="Botonl">
-    <button class="btn">
-      Confirmar
-    </button>
-</div>
-
+    <div class="container" style="margin-left: 80%;">
+      <div class="btn"><a href="acerca.html">NOSOTROS</a></div>
     
-
-
-
-
-    <script>
-      const computers = document.querySelectorAll('.computer');
-
-      computers.forEach(computer => {
-        computer.addEventListener('click', () => {
-          if (computer.classList.contains('occupied')) {
-            alert('Esta computadora ya está ocupado.');
-          } else {
-            computer.classList.add('occupied');
-            alert('Computadora asignado correctamente.');
-          }
-        });
-      });
-    </script>
-    <!-- Agrega Font Awesome para los íconos -->
-    <script src=""></script>
+    </div>		
   </main>
+  <BR></BR>
+  <HR></HR>
   <footer>
     <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
