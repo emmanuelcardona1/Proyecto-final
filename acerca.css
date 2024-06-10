@@ -34,11 +34,12 @@
 }
 .btn-conteiner {
   display: flex;
+  color: #fa0606;
   justify-content: center;
-  --color-text: #ffffff;
-  --color-background: #f60000;
-  --color-outline: #ff145b80;
-  --color-shadow: #00000080;
+  --color-text: #f9f9f9;
+  --color-background: #f20808;
+  --color-outline: #ef0505;
+  --color-shadow: #ea0000;
 }
 
 .btn-content {
@@ -119,7 +120,7 @@
   }
 
   100% {
-    fill: white;
+    fill: rgb(255, 255, 255);
   }
 }
 
@@ -153,7 +154,7 @@
 
 .bienvenido {
   padding: 20px 60px;
-  background-color: #000;
+  background-color: #000000;
   border: none;
   font-size: 35px;
   position: relative;
