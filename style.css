@@ -74,7 +74,7 @@ input :valid~label {
 
 .input-contenedor i {
     position: absolute;
-    color: #e0214ad0;
+    color: #ff0037;
     font-size: 1.6rem;
     top: 19px;
     right: 8px;
@@ -111,7 +111,7 @@ button {
     width: 100%;
     height: 45px;
     border-radius: 40px;
-    background: #e0214a;
+    background: #ff0037;
     border: none;
     font-weight: bold;
     cursor: pointer;
